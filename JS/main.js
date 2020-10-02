@@ -14,9 +14,10 @@ var day4 = month + 1;
 var day5 = month + 6;
 
 var learnDay = [min, hours, day, month, year];
-var now = [min, hours, day, month, year];
-var dateAfterCorrection = [];
+var now = [day1, hours, day, month, year];
 //time frame
+var dateAfterCorrection = [];
+
 function checkMinAndHour(arr) {
   if (arr[0] < 60) {
     arr[0] = arr[0]; //work with min
@@ -35,13 +36,7 @@ function checkMinAndHour(arr) {
   }
   return dateAfterCorrection;
 }
-function checkHour(arr) {
-  if (arr[1] <= 23) {
-    arr[1] = arr[1];
-  }
-  return dateAfterCorrection;
-}
-
+// --give now, dateAfterCorrection
 function checkHourAndDay(arr1, arr2) {
   if (arr1[1] == 24) {
     arr1[1] = 0;
@@ -52,11 +47,13 @@ function checkHourAndDay(arr1, arr2) {
     let day = arr1[2] + 1;
     arr2.push(hour);
     arr2.push(day);
+  } else if (arr1[1] <= 23) {
+    arr2.push(arr1[2]);
   }
   return arr2;
 }
-var maxDayOfMonth = 0;
-function howManyDaysHasMonth(arr) {
+
+var maxDayOfMonth = function howManyDaysHasMonth(arr) {
   if (
     arr[3] == 1 ||
     arr[3] == 3 ||
@@ -77,20 +74,46 @@ function howManyDaysHasMonth(arr) {
     }
   }
   return maxDayOfMonth;
+};
+
+//work with day, month   --give dateAfterCorrection, now
+function checkDayAndMonth(arr1, arr2) {
+  if (arr1[2] <= maxDayOfMonth) {
+    arr1.push(arr2[3]); //arr[3] is month
+  } else if (arr1[2] > maxDayOfMonth) {
+    let day = arr1[2] - maxDayOfMonth;
+    arr1[2] = day;
+    let month = arr2[3] + 1;
+    arr1.push(month);
+  }
+  return arr1;
+}
+
+// -- give dateAfterCorrection, now
+function checkMonthAndYear(arr1, arr2) {
+  if (arr1[3] <= 12) {
+    arr1.push(arr2[4]);
+  } else if (arr1[3] > 12) {
+    let month = arr1[3] - 12;
+    arr1[3] = month;
+    let year = arr2[4] + 1;
+    arr1.push(year);
+  }
+  return arr1;
 }
 
 console.log(learnMilestoneEndTime);
 console.log(learnDay);
 console.log(dateAfterCorrection);
 console.log(checkMinAndHour(now));
-console.log(checkHour(now));
 console.log(checkHourAndDay(now, dateAfterCorrection));
-console.log(checkSafeDay(now));
-console.log();
+console.log(maxDayOfMonth(now));
+console.log(checkDayAndMonth(dateAfterCorrection, now));
+console.log(checkMonthAndYear(dateAfterCorrection, now));
 
 // tikrinu arr su day1, day2, day3 kintamaisiais juose
 
 //surašau kodą ir tik tada išskaidau į atskirus failus kodo elementus.
 //Geras kodo rašymas, kai kodo elementas telpa į ekraną
-//savrbu funkcionalumas
+//svarbu funkcionalumas
 // pop up priminimas arba kitas priminimo formatas, veliau skaitau apie priminimo formatus, pvz. duolingo priminimai
