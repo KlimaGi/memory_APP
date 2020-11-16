@@ -5,7 +5,15 @@
     },
     {
       "path": "..\\..\\node.js"
+    },
+    {
+      "path": "..\\..\\portfolio"
+    },
+    {
+      "path": "..\\..\\calendar"
     }
   ],
-  "settings": {}
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "memory_APP"
+  }
 }
