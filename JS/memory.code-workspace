@@ -11,6 +11,9 @@
     },
     {
       "path": "..\\..\\calendar"
+    },
+    {
+      "path": "..\\..\\countdown-timer"
     }
   ],
   "settings": {
