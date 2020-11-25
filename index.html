@@ -4,32 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MemoryApp</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/main.js" defer></script>
   </head>
   <body>
-    <div>
-      <h2 id="today">Today</h2>
-      <h2>Memory training dates</h2>
+<div class="main-box">
+    <div class="container-note">
+          <h2 id="today">Today</h2>
+          <h2>Memory training dates</h2>
        
-      <button id="check">mark as completed</button>
-      <p id="lessonName">Lesson name</p>
       
-<div class="repetition1">
-  <p id="day1"></p>
-</div>
-<div class="repetition2">
-  <p id="day2"></p>
-</div>
-<div class="repetition3">
-  <p id="day3"></p>
-</div>
-<div class="repetition4">
-  <p id="day4"></p>
-</div>
-<div class="repetition5">
-  <p id="day5"></p>
-</div>
+          <input type="text" id="" class="" placeholder="Enter your lesson name"/>
+          <p id="lessonName">Lesson name</p>
+          
+          <div class="repetition1">
+            <p id="day1"></p> 
+            <button id="check">mark as completed</button>
+          </div>
+          <div class="repetition2">
+            <p id="day2"></p>
+          </div>
+          <div class="repetition3">
+            <p id="day3"></p>
+          </div>
+          <div class="repetition4">
+            <p id="day4"></p>
+          </div>
+          <div class="repetition5">
+            <p id="day5"></p>
+          </div>
     </div>
 
-    <script src="JS/main.js"></script>
+    <div class="container-calendar"></div>
+  </div>
   </body>
 </html>

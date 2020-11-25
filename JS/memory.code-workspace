@@ -14,9 +14,12 @@
     },
     {
       "path": "..\\..\\countdown-timer"
+    },
+    {
+      "path": "..\\..\\..\\..\\..\\code\\quiz_app"
     }
   ],
   "settings": {
-    "liveServer.settings.multiRootWorkspaceName": "memory_APP"
+    "liveServer.settings.multiRootWorkspaceName": "quiz_app"
   }
 }
