@@ -1,3 +1,4 @@
+// ********count 5 learning dates
 function countDays(days){
 var someDate = new Date();
 var numberOfDaysToAdd = days;
@@ -21,13 +22,13 @@ function afterMin(){
 var someDate = new Date();
 var added10Min = new Date(someDate.getTime() + (10*60*1000));
 //console.log(added10Min);
-var min = formatTime(someDate.getMinutes());
-var hour = formatTime(someDate.getHours());
-var day = formatTime(someDate.getDate());
-var month = formatTime(someDate.getMonth() + 1);
-var year = formatTime(someDate.getFullYear());
+var min = formatTime(added10Min.getMinutes());
+var hour = formatTime(added10Min.getHours());
+var day = formatTime(added10Min.getDate());
+var month = formatTime(added10Min.getMonth() + 1);
+var year = formatTime(added10Min.getFullYear());
 
-var formattedDateWithMin = year +'-'+ month +'-'+ day +' '+ hour +':'+ min;
+var formattedDateWithMin = year +"-"+ month +"-"+ day +"\t"+"``"+"\t"+ hour +":"+ min;
 return formattedDateWithMin;
 }
 afterMin();
@@ -47,8 +48,16 @@ document.getElementById("day3").innerHTML = day3;
 document.getElementById("day4").innerHTML = day4;
 document.getElementById("day5").innerHTML = day5;
 
-// console.log(learnDay);
-//console.log(day1);
-// console.log(day3);
-// console.log(day4);
-// console.log(day5);
+// ******** input text goes to lesson name 
+const form = document.getElementById("form");
+const input = document.getElementById("input");
+const lessonName = document.getElementById("lessonName");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const inputText = input.value;
+  lessonName.innerHTML = inputText;
+
+  input.value = "";
+});

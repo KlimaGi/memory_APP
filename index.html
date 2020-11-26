@@ -10,27 +10,35 @@
   <body>
 <div class="main-box">
     <div class="container-note">
+      <div class="top">
           <h2 id="today">Today</h2>
-          <h2>Memory training dates</h2>
-       
+          <h3 class="text">Memory training dates</h3>
+       </div>
       
-          <input type="text" id="" class="" placeholder="Enter your lesson name"/>
-          <p id="lessonName">Lesson name</p>
+       <form id="form">
+          <input type="text" id="input" class="input text" placeholder="Enter your lesson name" autocomplete="off"/>
+          </form>
+          <p id="lessonName" class="text">Lesson name</p>
           
           <div class="repetition1">
+            <div class="bubble">1</div>
             <p id="day1"></p> 
-            <button id="check">mark as completed</button>
+            <button id="completed" class="text">completed</button>
           </div>
           <div class="repetition2">
+            <div class="bubble">2</div>
             <p id="day2"></p>
           </div>
           <div class="repetition3">
+            <div class="bubble">3</div>
             <p id="day3"></p>
           </div>
           <div class="repetition4">
+            <div class="bubble">4</div>
             <p id="day4"></p>
           </div>
           <div class="repetition5">
+            <div class="bubble">5</div>
             <p id="day5"></p>
           </div>
     </div>
